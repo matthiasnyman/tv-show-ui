@@ -16,7 +16,7 @@ interface tableProps {
 }
 
 function Row(props: any) {
-  const { name, season, number, runtime, airdate, summary } = props.row;
+  const { name, number, runtime, airdate, summary } = props.row;
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -56,9 +56,8 @@ function Row(props: any) {
 }
 
 const EpisodeTable = (props: tableProps): JSX.Element => {
-
   return (
-    <TableContainer component={Paper} className="EpisodeTable">
+    <TableContainer component={Paper} className="episode-table">
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>

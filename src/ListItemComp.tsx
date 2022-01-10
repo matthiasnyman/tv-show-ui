@@ -1,5 +1,5 @@
 import './App.css';
-import { Grid, Card, CardMedia, CardHeader } from '@mui/material';
+import { Grid, Card, CardMedia } from '@mui/material';
 
 interface listItem {
   id: number;

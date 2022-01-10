@@ -27,12 +27,13 @@ const ShowComp = (props: popupProps) => {
 
   const [seasonNr, setSeasonNr] = React.useState<number>(1);
   const [seasonMax, setSeasonMax] = React.useState<number>(1);
-  const [filteredEpisodes, setFilteredEpisodes] = React.useState<any[]>(episodes);
+  const [filteredEpisodes, setFilteredEpisodes] =
+    React.useState<any[]>(episodes);
 
   React.useEffect(() => {
     setSeasonMax(Math.max(...episodes.map((o) => o.season), 0));
     setFilteredEpisodes(
-      episodes.filter((episode) => episode.season == seasonNr)
+      episodes.filter((episode) => episode.season === seasonNr)
     );
   }, [episodes]);
 
@@ -42,7 +43,7 @@ const ShowComp = (props: popupProps) => {
 
   React.useEffect(() => {
     setFilteredEpisodes(
-      episodes.filter((episode) => episode.season == seasonNr)
+      episodes.filter((episode) => episode.season === seasonNr)
     );
   }, [seasonNr]);
 
@@ -65,7 +66,11 @@ const ShowComp = (props: popupProps) => {
       </div>
 
       <div className="popup-info">
-        <img className="popup-img" src={item ? item.image.medium : ''} />
+        <img
+          className="popup-img"
+          alt="tv-show"
+          src={item ? item.image.medium : ''}
+        />
         <div
           dangerouslySetInnerHTML={{ __html: item ? item.summary : '' }}
         ></div>

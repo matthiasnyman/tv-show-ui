@@ -1,7 +1,7 @@
 import './App.css';
 import * as React from 'react';
 import ListItemComp from './ListItemComp';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import ShowComp from './ShowComp';
 import { Dialog } from '@mui/material';
 
@@ -29,7 +29,6 @@ const App = () => {
     fetch(`${Url}/shows/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(`${Url}/shows/${id}`);
         setSelectedItem(data);
       });
   };
